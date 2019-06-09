@@ -1,7 +1,6 @@
 from django.db import models
 from django import forms
 from datetime import date, timezone
-from simple_history.models import HistoricalRecords
 # Create your models here.
 class EventpastManager(models.Manager):
     def get_queryset(self):
