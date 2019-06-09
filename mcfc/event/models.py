@@ -10,6 +10,10 @@ class EventupcomingManager(models.Manager):
     def get_queryset(self):
         return super().get_queryset().filter(start_date__gt=date.today())
 
+class Allobjects(models.Manager):
+    def get_queryset(self):
+        return super().get_queryset()
+
 
 class Events(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
@@ -21,6 +25,7 @@ class Events(models.Model):
     start_date = models.DateField()
     end_date = models.DateField()
     start_time = models.TimeField()
+    objects = Allobjects()
     past_events = EventpastManager()
     upcoming_events = EventupcomingManager()
 

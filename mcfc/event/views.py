@@ -14,7 +14,7 @@ class EventAddView(CreateView):
 class EventListView(ListView):
     model = Events
     template_name = "events/events.html"
-    context_object_name = 'events'
+    context_object_name = "events"
     def get_queryset(self):
         events = Events.upcoming_events.all()
         return events

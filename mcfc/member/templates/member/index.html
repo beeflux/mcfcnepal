@@ -7,7 +7,7 @@
 {% block content %}
 <div class="container">
     <form method="GET" action="{% url 'member' %}">
-        <input type="text" placeholder="Search Memeber">
+        <input type="text" name="name" placeholder="Search Memeber">
         <button type="submit">Search</button>
     </form>
        <br><br>
@@ -17,7 +17,7 @@
         {% for member in members%}
         <div class="col-3">
             <div>
-              <img src="{{member.image.url}}" alt="Team" height=200px width=250px/>
+              <img src="{{member.image.url}}" alt="Team" height="250px" width="250px">
             </div>
             <div class="small-8 medium-12 cell align-self-top">
               <span class="name" class="btn btn-danger">{{member.full_name}}</span><br>
