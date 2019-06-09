@@ -7,24 +7,13 @@
 {% block content %}
 <div class="container">
     <form method="GET" action="{% url 'member' %}">
-        <div class="input-group">
-            <input type="text" class="form-control" placeholder="Search this blog">
-            <div class="input-group-append">
-              <button class="btn btn-secondary" type="submit">
-                <i class="fa fa-search"></i>
-              </button>
-            </div>
-          </div>
+        <input type="text" placeholder="Search Memeber">
+        <button type="submit">Search</button>
     </form>
        <br><br>
         <a href="{% url 'addmember' %}" class="btn btn-success">Add Member</a><br>
         <br>
           <div class="row">
-          {% if messages %}
-            {% for message in messages %}
-                  {{message}}
-            {% endfor %}
-            {% endif %}
         {% for member in members%}
         <div class="col-3">
             <div>

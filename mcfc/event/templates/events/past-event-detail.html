@@ -1,6 +1,11 @@
 {% extends 'home/base.html' %}
 <div class="container">
 {% block content %}
-    <h1>{{past_event.title}}</h1>
+    <h1>{{object.title}}</h1>
+    <p>{{object.description}}</p>
+    <img src="{{object.icon.url}}" alt="Team" height=200px width=250px/><br>
+    <b>Start Date: </b>{{object.start_date}}<br>
+    <b>End Date: </b> {{object.end_date}}<br>
+    <b>Start Time: </b>{{object.start_time}}
 {% endblock %}
 </div>

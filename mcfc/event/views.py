@@ -16,7 +16,7 @@ class EventListView(ListView):
     template_name = "events/events.html"
     context_object_name = 'events'
     def get_queryset(self):
-        events = Events.objects.all()
+        events = Events.upcoming_events.all()
         return events
     
 
@@ -30,5 +30,9 @@ class PastEventListView(ListView):
 
 
 class EventDetailView(DetailView):
+    model = Events
+    template_name = 'events/events-detail.html'
+
+class PastEventDetailView(DetailView):
     model = Events
     template_name = 'events/past-event-detail.html'

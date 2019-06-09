@@ -10,11 +10,6 @@
     <br>
     <br>
     <div class="row">
-    {% if messages %}
-        {% for message in messages %}
-            {{message}}
-        {% endfor %}
-    {% endif %}
     {% for image in object_list %}
     <div class="col-4">
         <img src="{{image.image.url}}" alt="Team" height=200px width=250px/>

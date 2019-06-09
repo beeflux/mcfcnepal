@@ -8,6 +8,7 @@
         {% for event in events %}
             <br>
             <h3><a href="{% url 'detail-event' event.pk %}">{{event.title}}</a></h3>
+            {{event.start_date}}-{{event.end_date}}
             <p>{{event.description}}</p>
             <br>
         {% endfor %}

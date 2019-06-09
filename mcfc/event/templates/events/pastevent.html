@@ -5,7 +5,7 @@
         <a href="{% url 'add-events' %}" class="btn btn-success">Add Your Events</a>
         {% for event in past_events %}
             <br>
-            <h3><a href="{% url 'detail-event' event.pk %}">{{event.title}}</a></h3>
+            <h3><a href="{% url 'past-detail-event' event.pk %}">{{event.title}}</a></h3>
             <p>{{event.description}}</p>
             <br>
         {% endfor %}

@@ -6,6 +6,7 @@ class MemberForm(forms.ModelForm):
         model = Members
         fields = (
             'full_name',
+            'member_type',
             'image',
             'email',
             'dob',

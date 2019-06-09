@@ -8,7 +8,7 @@ class EventpastManager(models.Manager):
 
 class EventupcomingManager(models.Manager):
     def get_queryset(self):
-        return super().get_queryset().filter(start_date__gte=date.today())
+        return super().get_queryset().filter(start_date__gt=date.today())
 
 
 class Events(models.Model):
@@ -22,7 +22,7 @@ class Events(models.Model):
     end_date = models.DateField()
     start_time = models.TimeField()
     past_events = EventpastManager()
-    objects = EventupcomingManager()
+    upcoming_events = EventupcomingManager()
 
     def __str__(self):
         return self.title

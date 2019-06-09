@@ -16,9 +16,6 @@ class MemberListView(ListView):
         members = Members.objects.all()
         if self.request.GET.get('name'):
             members = members.filter(full_name__icontains=self.request.GET.get('name'))
-        else:
-            messages.info(self.request, "No Results Found")
-        
         return members
 
 
