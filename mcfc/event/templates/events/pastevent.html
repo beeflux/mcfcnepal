@@ -1,0 +1,13 @@
+{% extends 'home/base.html' %}
+
+{% block content %}
+<div class="container">
+        <a href="{% url 'add-events' %}" class="btn btn-success">Add Your Events</a>
+        {% for event in past_events %}
+            <br>
+            <h3><a href="{% url 'detail-event' event.pk %}">{{event.title}}</a></h3>
+            <p>{{event.description}}</p>
+            <br>
+        {% endfor %}
+</div>
+{% endblock %}

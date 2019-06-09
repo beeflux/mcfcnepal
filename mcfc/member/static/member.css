@@ -36,3 +36,17 @@ div.container {
   background-color: #f2f2f2;
   padding: 20px;
 }
+
+.form-control-borderless {
+  border: none;
+}
+
+.form-control-borderless:hover, .form-control-borderless:active, .form-control-borderless:focus {
+  border: none;
+  outline: none;
+  box-shadow: none;
+}
+
+.form{
+  background-color: white;
+}

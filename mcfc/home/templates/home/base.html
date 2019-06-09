@@ -5,6 +5,10 @@
 
     <title>{% block title %}mcfc{% endblock %}</title>
     <meta charset="UTF-8" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link
       rel="stylesheet"
@@ -75,35 +79,35 @@
               role="treeitem"
               aria-hidden="false"
             >
-              <a href="#">Home</a>
+              <a href="{% url 'homepage' %}">Home</a>
             </li>
             <li
               id="menu-item-119"
               class="menu-item menu-item-type-post_type menu-item-object-page menu-item-119"
               role="treeitem"
             >
-              <a href="#">Members</a>
+              <a href="{% url 'member' %}">Members</a>
             </li>
             <li
               id="menu-item-182"
               class="menu-item menu-item-type-post_type menu-item-object-page menu-item-182"
               role="treeitem"
             >
-              <a href="#">Events</a>
+              <a href="{% url 'events'%}">Events</a>
             </li>
             <li
               id="menu-item-1005"
               class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1005"
               role="treeitem"
             >
-              <a href="#">WallPaper Gallery</a>
+              <a href="{% url 'gallery-view' %}">WallPaper Gallery</a>
             </li>
             <li
               id="menu-item-682"
               class="login menu-item menu-item-type-custom menu-item-object-custom menu-item-682"
               role="treeitem"
             >
-              <a href="#" data-open="login-modal">Merchandise Comparison</a>
+              <a href="#" data-open="login-modal">Blog</a>
             </li>
           </ul>
         </div>
@@ -132,35 +136,34 @@
             <a id="mobile-call" href="tel:+9779882828282"
               ><i class="fa fa-phone" aria-hidden="true"></i
             ></a>
-
-            <nav>
               <!--  -->
+              <nav>
               <div class="menu-main-menu-container">
                 <ul id="menu-main-menu-1" class="menu">
                   <li
-                    class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-53 current_page_item menu-item-55 is-active"
+                    class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-53 current_page_item menu-item-55"
                   >
-                    <a href="#">Home</a>
+                    <a href="{% url 'homepage' %}">Home</a>
                   </li>
                   <li
-                    class="menu-item menu-item-type-post_type menu-item-object-page menu-item-119"
+                    class="menu-item menu-item-type-post_type menu-item-object-page menu-item-119 "
                   >
-                    <a href="#">Members</a>
+                    <a href="{% url 'member' %}">Members</a>
                   </li>
                   <li
                     class="menu-item menu-item-type-post_type menu-item-object-page menu-item-182"
                   >
-                    <a href="#">Events</a>
+                    <a href="{% url 'events'%}">Events</a>
                   </li>
                   <li
                     class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1005"
                   >
-                    <a href="#">WallPaper Gallery</a>
+                    <a href="{% url 'gallery-view' %}">WallPaper Gallery</a>
                   </li>
                   <li
-                    class="menu-item menu-item-type-post_type menu-item-object-page menu-item-413"
+                    class="menu-item menu-item-type-post_type menu-item-object-page menu-item-213"
                   >
-                    <a href="#">Merchandise Comparison</a>
+                    <a href="{% url 'blog' %}">Blog</a>
                   </li>
                 </ul>
               </div>
