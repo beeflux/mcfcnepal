@@ -33,7 +33,6 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     'blog.apps.BlogConfig',
-    'simple_history',
     'gallery.apps.GalleryConfig',
     'event.apps.EventConfig',
     'home.apps.HomeConfig',
