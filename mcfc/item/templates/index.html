@@ -5,7 +5,7 @@
   <div class="container">
       <div class="row">
         <div class="col-lg-3">
-        <h2 class="my-4" style="color:red;">Shop Name</h1>
+        <h2 class="my-4" style="color:red;">Category</h1>
           {% for i in category%}
           <div class="list-group">
             <a href="{% url 'item' %}?c={{i.id}}" class="list-group-item" style="text-decoration: none;">{{i}}</a>
