@@ -284,26 +284,21 @@
           <section class="center padded light-grey">
             <article>
               <h2>Some Of Our Team Members</h2>
-              {% for member in members %}
-              <div
-                class="grid-container grid-x grid-container-padded team-members"
-              >
-                <div
-                  class="medium-6 large-3 cell grid-x team align-self-top grid-padding-x"
-                >
-                  <div class="small-4 medium-12 cell">
-                    <img src="{{member.image.url}}" alt="Team" />
+              <div class="row">
+                {% for member in members%}
+                <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+                  <div class="hovereffect">
+                      <img class="img-responsive" src="{{member.image.url}}" alt="">
+                          <div class="overlay">
+                              <h2>{{member.full_name}}</h2>
+                      <p>
+                        <a href="#" style="color:black;">{{member.email}}</a>
+                      </p>
+                          </div>
                   </div>
-                  <div class="small-8 medium-12 cell align-self-top">
-                    <span class="name">{{member.full_name}}</span>
-                    <a class="email-link" href="#"
-                      ><i class="fa fa-envelope-o" aria-hidden="true"></i>
-                      {{member.email}}</a
-                    >
-                  </div>
-                </div>
               </div>
               {% endfor %}
+              </div>
             </article>
           </section>
         </section>
