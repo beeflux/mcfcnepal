@@ -1,0 +1,10 @@
+{% extends 'home/base.html' %}
+{% block content %}
+<div class="container">
+    <h1 style="color:black;">{{object.name}}</h1>
+    <h4 style="color:red;">{{object.category}}</h4>
+    <img src="{{object.image.url}}" width=250px height=300px><br>
+    <p style="color:black;">{{object.description}}</p>
+    <h3>Price: NRs.{{object.price}}</h3>
+</div>
+{% endblock %}

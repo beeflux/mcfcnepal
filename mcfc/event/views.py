@@ -19,6 +19,11 @@ class EventListView(ListView):
     def get_queryset(self):
         events = Events.upcoming_events.all()
         return events
+
+    def get_context_data(self, **kwargs):
+        data = super().get_context_data(**kwargs)
+        data['active'] = 'events'
+        return data
     
 
 class PastEventListView(ListView):

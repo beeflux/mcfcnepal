@@ -17,6 +17,10 @@ class MemberListView(ListView):
         if self.request.GET.get('name'):
             members = members.filter(full_name__icontains=self.request.GET.get('name'))
         return members
+    def get_context_data(self, **kwargs):
+        data = super().get_context_data(**kwargs)
+        data = {'active':'member'}
+        return data
 
 
 def addmember(request):

@@ -26,6 +26,7 @@ urlpatterns = [
     path('', include('event.urls')),
     path('', include('gallery.urls')),
     path('', include('blog.urls')),
+    path('', include('item.urls')),
 ]
 
 if settings.DEBUG:

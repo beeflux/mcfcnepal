@@ -47,6 +47,7 @@
       type="text/css"
       media="all"
     />
+
     <script>
         $(function() {
           var pull 		= $('#pull');
@@ -85,12 +86,12 @@
       <a href="{% url 'homepage' %}" style="text-decoration: none;"><img src="{% static 'image/nav-icon.png' %}" width=7%></a>
   <nav class="clearfix">
       <ul class="clearfix">
-        <li><a href="{% url 'homepage' %}" style="text-decoration: none;">Home</a></li>
-        <li><a href="{% url 'member' %}" style="text-decoration: none;">Members</a></li>
-        <li><a href="{% url 'events' %}" style="text-decoration: none;">Events</a></li>
-        <li><a href="{% url 'gallery-view' %}" style="text-decoration: none;">Gallery</a></li>
-        <li><a href="#" style="text-decoration: none;">Blog</a></li>
-        <li><a href="#" style="text-decoration: none;">Tools</a></li>
+        <li><a href="{% url 'homepage' %}" style="text-decoration: none;" {% if active == 'home' %}class="active"{% endif %}>Home</a></li>
+        <li><a href="{% url 'member' %}" style="text-decoration: none;" {% if active == 'member' %}class="active"{% endif %}">Members</a></li>
+        <li><a href="{% url 'events' %}" style="text-decoration: none;" {% if active == 'events' %}class="active"{% endif %}>Events</a></li>
+        <li><a href="{% url 'gallery-view' %}" style="text-decoration: none;" {% if active == 'gallery-view' %}class="active"{% endif %}>Gallery</a></li>
+        <li><a href="{% url 'blog' %}" style="text-decoration: none;" {% if active == 'blog' %}class="active"{% endif %}>Blog</a></li>
+        <li><a href="{% url 'item'%}" style="text-decoration: none;" {% if active == 'item' %}class="active"{% endif %}>Item</a></li>
       </ul>
       <a href="#" id="pull">Menu</a>
     </nav>

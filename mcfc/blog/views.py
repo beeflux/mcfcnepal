@@ -9,6 +9,11 @@ class BlogListView(ListView):
     template_name = 'blog/blog.html'
     context_object_name = 'blogs'
 
+    def get_context_data(self, **kwargs):
+        data = super().get_context_data(**kwargs)
+        data['active'] = 'blog'
+        return data
+
 class BlogDetailView(DetailView):
     model = Blog
     template_name = "blog/blog-detail.html"

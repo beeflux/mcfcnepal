@@ -32,6 +32,7 @@ ALLOWED_HOSTS = ['*']
 # Application definition
 
 INSTALLED_APPS = [
+    'item.apps.ItemConfig',
     'blog.apps.BlogConfig',
     'gallery.apps.GalleryConfig',
     'event.apps.EventConfig',
