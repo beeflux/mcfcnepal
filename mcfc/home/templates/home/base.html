@@ -5,6 +5,9 @@
 
     <title>{% block title %}mcfc{% endblock %}</title>
     <meta charset="UTF-8" />
+    <link href='http://fonts.googleapis.com/css?family=PT+Sans:400,700' rel='stylesheet' type='text/css'>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="../_nav/js/jquery.js"><\/script>')</script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
@@ -38,6 +41,29 @@
       type="text/css"
       media="all"
     />
+    <link
+      rel="stylesheet"
+      href="{% static 'css/style.css' %}"
+      type="text/css"
+      media="all"
+    />
+    <script>
+        $(function() {
+          var pull 		= $('#pull');
+            menu 		= $('nav ul');
+            menuHeight	= menu.height();
+          $(pull).on('click', function(e) {
+            e.preventDefault();
+            menu.slideToggle();
+          });
+          $(window).resize(function() {
+            var w = $(window).width();
+            if(w > 320 && menu.is(':hidden')) {
+              menu.removeAttr('style');
+            }
+          });
+        });
+        </script>
     {% block extralink %}
     
     {% endblock %}
@@ -55,121 +81,20 @@
     class="page-template page-template-page-templates page-template-company page-template-page-templatescompany-php page page-id-53 offcanvas"
     data-gr-c-s-loaded="true"
   >
-    <div class="off-canvas-wrapper">
-      <div
-        class="off-canvas position-left is-transition-push is-closed"
-        id="offCanvas"
-        data-off-canvas=""
-        aria-hidden="true"
-        data-e="kqk5b8-e"
-      >
-        <div class="mobile-main-menu">
-          <ul
-            id="menu-main-menu"
-            class="vertical menu"
-            data-accordion-menu=""
-            data-submenu-toggle="true"
-            role="tree"
-            aria-multiselectable="true"
-            data-e="l5xezs-e"
-          >
-            <li
-              id="menu-item-55"
-              class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-53 current_page_item menu-item-55 is-active"
-              role="treeitem"
-              aria-hidden="false"
-            >
-              <a href="{% url 'homepage' %}">Home</a>
-            </li>
-            <li
-              id="menu-item-119"
-              class="menu-item menu-item-type-post_type menu-item-object-page menu-item-119"
-              role="treeitem"
-            >
-              <a href="{% url 'member' %}">Members</a>
-            </li>
-            <li
-              id="menu-item-182"
-              class="menu-item menu-item-type-post_type menu-item-object-page menu-item-182"
-              role="treeitem"
-            >
-              <a href="{% url 'events'%}">Events</a>
-            </li>
-            <li
-              id="menu-item-1005"
-              class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1005"
-              role="treeitem"
-            >
-              <a href="{% url 'gallery-view' %}">WallPaper Gallery</a>
-            </li>
-            <li
-              id="menu-item-682"
-              class="login menu-item menu-item-type-custom menu-item-object-custom menu-item-682"
-              role="treeitem"
-            >
-              <a href="#" data-open="login-modal">Blog</a>
-            </li>
-          </ul>
-        </div>
-      </div>
-      <div class="js-off-canvas-overlay is-overlay-fixed"></div>
-
-      <div class="off-canvas-content" data-off-canvas-content="">
-        <header class="site-header" role="banner">
-          <div id="main-header" class="grid-container">
-            <button
-              class="hamburger hamburger--spin"
-              type="button"
-              data-toggle="offCanvas"
-              aria-expanded="false"
-              aria-controls="offCanvas"
-            >
-              <span class="hamburger-box">
-                <span class="hamburger-inner"></span>
-              </span>
-            </button>
-
-            <a id="logo-link" href="#" rel="Home">
-              <img id="logo" src="{% static 'image/logo.png' %}" alt="Place your logo" />
-            </a>
-
-            <a id="mobile-call" href="tel:+9779882828282"
-              ><i class="fa fa-phone" aria-hidden="true"></i
-            ></a>
-              <!--  -->
-              <nav>
-              <div class="menu-main-menu-container">
-                <ul id="menu-main-menu-1" class="menu">
-                  <li
-                    class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-53 current_page_item menu-item-55"
-                  >
-                    <a href="{% url 'homepage' %}">Home</a>
-                  </li>
-                  <li
-                    class="menu-item menu-item-type-post_type menu-item-object-page menu-item-119 "
-                  >
-                    <a href="{% url 'member' %}">Members</a>
-                  </li>
-                  <li
-                    class="menu-item menu-item-type-post_type menu-item-object-page menu-item-182"
-                  >
-                    <a href="{% url 'events'%}">Events</a>
-                  </li>
-                  <li
-                    class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1005"
-                  >
-                    <a href="{% url 'gallery-view' %}">WallPaper Gallery</a>
-                  </li>
-                  <li
-                    class="menu-item menu-item-type-post_type menu-item-object-page menu-item-213"
-                  >
-                    <a href="{% url 'blog' %}">Blog</a>
-                  </li>
-                </ul>
-              </div>
-            </nav>
-          </div>
-        </header>
+  <div class="container">
+      <a href="{% url 'homepage' %}" style="text-decoration: none;"><img src="{% static 'image/nav-icon.png' %}" width=7%></a>
+  <nav class="clearfix">
+      <ul class="clearfix">
+        <li><a href="{% url 'homepage' %}" style="text-decoration: none;">Home</a></li>
+        <li><a href="{% url 'member' %}" style="text-decoration: none;">Members</a></li>
+        <li><a href="{% url 'events' %}" style="text-decoration: none;">Events</a></li>
+        <li><a href="{% url 'gallery-view' %}" style="text-decoration: none;">Gallery</a></li>
+        <li><a href="#" style="text-decoration: none;">Blog</a></li>
+        <li><a href="#" style="text-decoration: none;">Tools</a></li>
+      </ul>
+      <a href="#" id="pull">Menu</a>
+    </nav>
+  </div>
         {% block content %}
         <section class="container">
           <div class="for-seo">

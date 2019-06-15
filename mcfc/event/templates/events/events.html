@@ -1,16 +1,35 @@
 {% extends 'home/base.html' %}
-
+{% load static %}
+{% block extralink %}
+<link href="{% static 'event.css' %}" rel="stylesheet">
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+{% endblock %}
 {% block content %}
 <div class="container">
         <br>
         <a href="{% url 'add-events' %}" class="btn btn-info">Add Your Events</a></button>
         <a href="{% url 'past-events' %}">Past Events</a></button>
         {% for event in events %}
-            <br>
-            <h3><a href="{% url 'detail-event' event.pk %}">{{event.title}}</a></h3>
-            {{event.start_date}}-{{event.end_date}}
-            <p>{{event.description}}</p>
-            <br>
+        <div class="blogs_sec LatestBlog">
+                <ul>
+                  <li>
+                      <h1>
+                  <div class="icon_box float-left">
+                  <div class="top">Start Date</div>
+                  <div class="bott">{{event.start_date}}</div>
+                  </div></h1>
+                  <h1>{{event.title}}
+                  <div class="icon_box float-left">
+                        <div class="top">End Date</div>
+                        <div class="bott">{{event.start_date}}</div>
+                        </div></h1>
+                        <a href="{% url 'detail-event' event.pk %}" class="lll">Detail</a>
+                  </li>
+                </ul>
+              </div>
         {% endfor %}
 </div>
 {% endblock %}

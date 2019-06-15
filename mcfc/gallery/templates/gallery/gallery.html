@@ -11,9 +11,13 @@
     <br>
     <div class="row">
     {% for image in object_list %}
-    <div class="col-4">
-        <img src="{{image.image.url}}" alt="Team" height=200px width=250px/>
-        <h4>{{image.name}}</h4>
+    <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+        <div class="hovereffect">
+            <img class="img-responsive" src="{{image.image.url}}" alt="">
+            <div class="overlay">
+               <h2>{{image.name}}</h2>
+            </div>
+        </div>
     </div>
     {% endfor %}
 </div>

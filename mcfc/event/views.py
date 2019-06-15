@@ -3,12 +3,13 @@ from .models import Events
 from django.views.generic import CreateView, ListView, DetailView
 from .forms import EventAddForm
 from datetime import date, datetime
+from django.contrib.auth.decorators import login_required
 # Create your views here.
 
 class EventAddView(CreateView):
     model = Events
     form_class = EventAddForm
-    template_name = 'events/add-events.html'
+    template_name = 'events/index.html'
     success_url = 'events'
 
 class EventListView(ListView):

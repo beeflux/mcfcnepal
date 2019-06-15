@@ -6,31 +6,32 @@
 {% endblock %}
 {% block content %}
 <div class="container">
-    <form method="GET" action="{% url 'member' %}">
-        <input type="text" name="name" placeholder="Search Memeber">
-        <button type="submit">Search</button>
+    <form method="GET" action="{% url 'member' %}" class="form-inline">
+              <div class="md-form my-0">
+                <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search" name="name">
+                <button class="btn btn-success" type="submit">Search</button>
+              </div>
+              
     </form>
        <br><br>
         <a href="{% url 'addmember' %}" class="btn btn-success">Add Member</a><br>
         <br>
-          <div class="row">
+       
+        <div class="row">
         {% for member in members%}
-        <div class="col-3">
-            <div>
-              <img src="{{member.image.url}}" alt="Team" height="250px" width="250px">
-            </div>
-            <div class="small-8 medium-12 cell align-self-top">
-              <span class="name" class="btn btn-danger">{{member.full_name}}</span><br>
-
-              <a class="email-link" href="#"
-                ><i class="fa fa-envelope-o" aria-hidden="true"></i>
-                {{member.email}}</a>
-              <a href="{% url 'updatemember' member.pk %}" class="btn btn-success">Edit</a>
-              <a href="{% url 'inactive' member.pk%}" class="btn btn-success">Inactive</a>
-            </div>
-        </div>
-      {% endfor %}
+        <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+          <div class="hovereffect">
+              <img class="img-responsive" src="{{member.image.url}}" alt="">
+                  <div class="overlay">
+                      <h2>{{member.full_name}}</h2>
+              <p>
+                <a href="#" style="color:black;">{{member.email}}</a>
+              </p>
+                  </div>
+          </div>
       </div>
+      {% endfor %}
+    </div>
   
 
 {% if is_paginated %}

@@ -1,10 +1,16 @@
 {% extends 'home/base.html' %}
-
+{% load static %}
+{% block extralink %}
+<link href="{% static 'event.css'%}" rel="stylesheet">
+{% endblock %}
 {% block content %}
-    <h1>{{object.title}}</h1>
+<div class="container" style="background-color: #f2f2f2; padding-right: 15px;
+padding-left: 15px;">
+    <h1 style="color: black">{{object.title}}</h1>
     <p>{{object.description}}</p>
-    <img src="{{object.icon.url}}" alt="Team" height=200px width=250px/>
+    <img src="{{object.icon.url}}" alt="Team" height=200px width=250px/><br>
     <b>Start Date: </b>{{object.start_date}}<br>
     <b>End Date: </b> {{object.end_date}}<br>
     <b>Start Time: </b>{{object.start_time}}
+</div>
 {% endblock %}
