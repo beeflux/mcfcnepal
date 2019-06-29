@@ -282,7 +282,6 @@
 
           <!-- Team Members -->
           <section class="center padded light-grey">
-            <article>
               <h2>Some Of Our Team Members</h2>
               <div class="row">
                 {% for member in members%}
@@ -290,7 +289,8 @@
                   <div class="hovereffect">
                       <img class="img-responsive" src="{{member.image.url}}" alt="">
                           <div class="overlay">
-                              <h2>{{member.full_name}}</h2>
+                              <h2 style="color:black;">{{member.name}}</h2>
+                              <h2 style="color:black;">{{member.position}}</h2>
                       <p>
                         <a href="#" style="color:black;">{{member.email}}</a>
                       </p>
@@ -298,8 +298,7 @@
                   </div>
               </div>
               {% endfor %}
-              </div>
-            </article>
+            </div>
           </section>
         </section>
         {% endblock %}

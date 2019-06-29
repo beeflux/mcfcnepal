@@ -27,6 +27,7 @@ urlpatterns = [
     path('', include('gallery.urls')),
     path('', include('blog.urls')),
     path('', include('item.urls')),
+    path('', include('authentication.urls')),
 ]
 
 if settings.DEBUG:

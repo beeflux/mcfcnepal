@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from .forms import MemberForm
-from .models import Members
+from .models import Members, AdminMember
 from django.views.generic import ListView, UpdateView, DeleteView
 from django.urls import reverse_lazy
 from django.contrib import messages
@@ -48,3 +48,7 @@ def inactive(request, pk):
     member.save()
     return redirect('member')
 
+class AdminMembers(ListView):
+    model = AdminMember
+    context_object_name = 'admin_members'
+    template_name = 'home/base.html'
